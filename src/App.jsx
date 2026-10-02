@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { initialClients, initialServices, extras } from './data/booking';
 import AdminDashboard from './pages/AdminDashboard';
 import ArtistDashboard from './pages/ArtistDashboard';
@@ -36,6 +37,7 @@ export default function App() {
       {view === 'client' && <ClientWizard {...{ step, setStep, form, update, services, selectedServices, total, toggleExtra, submitted, setSubmitted, submit }} />}
       {view === 'artist' && <ArtistDashboard clients={clients} setClients={setClients} />}
       {view === 'admin' && <AdminDashboard services={services} setServices={setServices} />}
+      <Footer />
     </div>
   );
 }
